@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 /*
     value : input 값
     onChange : input 변경 이벤트
-    onInsert : 추가 버튼 클릭 이벤트
+    onInsert : '추가' 버튼 클릭 이벤트
 */
 
 const TodoInput = ({ value, onChange, onInsert }) => {
