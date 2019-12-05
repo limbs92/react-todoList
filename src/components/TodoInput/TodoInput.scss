@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    &:hover{
+    &:hover{    //버튼에 마우스가 올라갔을 때 색 바꾸기
       background: $oc-green-7;
       color: white;
     }
