@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TodoInput.scss';
+import styles from './TodoInput'; //책에는 ./TodoInput.scss 라고 적혀있는데 이러면 에러남...
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
