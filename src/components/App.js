@@ -20,7 +20,7 @@ state = {
 //일정 데이터 안에 들어가는 id 값
 id = 1
 getId = () => {
-  return ++id;
+  return ++this.id;
 };
 
 handleChange = (e) => {
@@ -38,7 +38,7 @@ handleInsert = () => {
   const newTodo = {
     text : input,
     done : false,
-    id: getId()
+    id: this.getId()
   };
 
   //setState 로 데이터 등록
