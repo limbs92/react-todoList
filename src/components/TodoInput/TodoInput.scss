@@ -1,4 +1,5 @@
-@import 'utils';
+@import '~open-color/open-color';
+//==> @import '~open-color/open-color'; 그냥 utils import 하지 않고 다 각각 넣어버림... 
 
 .todo-input{
   border-top: 1px solid $oc-gray-2;

@@ -10,7 +10,6 @@ const cx = classNames.bind(styles);
     onChange : input 변경 이벤트
     onInsert : '추가' 버튼 클릭 이벤트
 */
-
 const TodoInput = ({ value, onChange, onInsert }) => {
   //Enter 키를 누르면 onInsert 실행
   const handleKeyPress = (e) => {
