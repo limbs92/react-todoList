@@ -4,11 +4,58 @@ import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
 class App extends React.Component{
-  render(){
+constructor(props){
+  super(props);
+  this.state = {
+    input: '',
+    todos:[
+      { id:0, text: 'Study React', done: true},
+      { id:1, text: 'Styling Component', done: false}
+    ]
+  };
+
+  let id = 1;
+  const getId = () => {
+    return ++this.id;
+  }
+}
+
+handleChange = (e) => {
+  const { value } = e.target;
+  this.setState({
+    input: value
+  })
+};
+
+//데이터 추가
+handleInsert = () => {
+  const { todos, input } = this.state;
+
+  //새 데이터 객체 만들기
+  const newTodo = {
+    text : input,
+    done : false,
+    id: this.getId()
+  }
+
+  //setState 로 데이터 등록
+  this.setState({
+    todos:[...todos, newTodo],
+    input: ''
+  })
+}
+
+  render() {
+    const { input, todos } = this.state;
+    const {
+      handleChange,
+      handleInsert
+    } = this;
+
     return (
       <PageTemplate>
-        <TodoInput/>
-        <TodoList/>
+        <TodoInput onChange={handleChange} onInsert={handleInsert} value={input}/>
+        <TodoList todos={todos}/>
       </PageTemplate>
     );
   }

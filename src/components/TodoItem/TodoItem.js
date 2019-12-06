@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './TodoItem.scss';
 import classnames from 'classnames/bind';
 
 const cx = classnames.bind(styles);
 
-class TodoItem extends Component{
+class TodoItem extends React.Component{
   render() {
     const {done, children, onToggle, onRemove} = this.props;
 
