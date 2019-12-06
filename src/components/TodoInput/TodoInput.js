@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TodoInput'; //책에는 ./TodoInput.scss 라고 적혀있는데 이러면 에러남...
+import styles from './TodoInput.scss'; //책에는 ./TodoInput.scss 라고 적혀있는데 이러면 에러남...
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
@@ -8,12 +8,12 @@ const cx = classNames.bind(styles);
 /*
     value : input 값
     onChange : input 변경 이벤트
-    onInsert : '추가' 버튼 클릭 이벤트
+    onInsert : '추가' 버튼 클릭 시 발생하는 이벤트
 */
 const TodoInput = ({ value, onChange, onInsert }) => {
   //Enter 키를 누르면 onInsert 실행
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       onInsert();
     }
   }
