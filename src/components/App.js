@@ -4,11 +4,6 @@ import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
 class App extends React.Component{
-// constructor(props){
-//   super(props);
-
-// }
-
 state = {
   input: '',
   todos:[
