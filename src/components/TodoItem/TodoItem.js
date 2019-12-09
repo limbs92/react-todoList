@@ -5,6 +5,10 @@ import classnames from 'classnames/bind';
 const cx = classnames.bind(styles);
 
 class TodoItem extends React.Component{
+  shouldComponentUpdate(nextProps, nextState){
+    return this.props.done !== nextProps.done;
+  }
+
   render() {
     const {done, children, onToggle, onRemove} = this.props;
 
@@ -12,7 +16,11 @@ class TodoItem extends React.Component{
       <div className={cx('todo-item')} onClick={onToggle}>
         <input className={cx('tick')} type="checkbox" checked={done} readOnly/>
         <div className={cx('text', {done})}>{children}</div>
-        <div className={cx('delete')} onClick={onRemove}>[지우기]</div>
+        <div className={cx('delete')} onClick={(e) => {
+          onRemove();
+          e.stopPropagation();
+        }
+        }>[지우기]</div>
       </div>
     );
   }
