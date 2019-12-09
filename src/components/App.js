@@ -43,21 +43,6 @@ handleInsert = () => {
   });
 };
 
-handleRemove = (id) => {
-  //id로 배열 인덱스 찾기
-  const { todos } = this.state;
-  const index = todos.findIndex(todo => todo.id === id);
-
-  //찾은 데이터 삭제 시키기 - slice 로 전후 데이터들을 복사(위에서 찾은 index는 제외처리)
-  //...은 배열에 데이터를 추가한다는 의미
-  this.setState({
-    todos:[
-      ...todos.slice(0, index),
-      ...todos.slice(index + 1, todos.length)
-    ]
-  });
-}
-
 handleToggle = (id) => {
   //id로 배열 인덱스 찾기
   const { todos } = this.state;
@@ -76,6 +61,21 @@ handleToggle = (id) => {
       ...todos.slice(index + 1, todos.length)
     ]
   })
+}
+
+handleRemove = (id) => {
+  //id로 배열 인덱스 찾기
+  const { todos } = this.state;
+  const index = todos.findIndex(todo => todo.id === id);
+
+  //찾은 데이터 삭제 시키기 - slice 로 전후 데이터들을 복사(위에서 찾은 index는 제외처리)
+  //...은 배열에 데이터를 추가한다는 의미
+  this.setState({
+    todos:[
+      ...todos.slice(0, index),
+      ...todos.slice(index + 1, todos.length)
+    ]
+  });
 }
 
   render() {
